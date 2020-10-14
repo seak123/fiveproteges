@@ -1,0 +1,34 @@
+// Dota Heroes File
+// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
+// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Templar Assassin
+	//=================================================================================================================
+	//"npc_dota_hero_templar_assassin_template"
+	//{
+	//	"override_hero"				"npc_dota_hero_templar_assassin"			// Hero to override
+	//	"Ability1"					"templar_assassin_refraction_holdout"		// Ability 1
+	//	"VisionNighttimeRange"		"1800"										// Range of vision at night time.
+	//}
+	"man"
+	{
+		"override_hero" 			"npc_dota_hero_templar_assassin"
+		"Model"						"models/heroes/nerubian_assassin/nerubian_assassin.vmdl"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"36"		// Damage range max.
+		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"120"		// Range within a target can be acquired.
+		"AttackRange"				"120"		// Range within a target can be attacked.   
+
+
+		"StatusHealth"				"120"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"50"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	}
+}
