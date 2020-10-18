@@ -12,23 +12,82 @@
 	//	"Ability1"					"templar_assassin_refraction_holdout"		// Ability 1
 	//	"VisionNighttimeRange"		"1800"										// Range of vision at night time.
 	//}
-	"man"
+	"sourth_man"
 	{
-		"override_hero" 			"npc_dota_hero_templar_assassin"
-		"Model"						"models/heroes/nerubian_assassin/nerubian_assassin.vmdl"
+		"override_hero"				"npc_dota_hero_omniknight"
+		"Ability1"						""
+		"Ability2"      				""
+		"Ability3"						""
+		"Ability4"						""
+		"Ability5"						""
+		"Ability6"						""
+		"Ability7"						""
+		"Ability8"						""
+		"Ability9"						""
+		"Ability10"						""
+		"Ability11"						""
+		"Ability12"						""
+		"Ability13"						""
+		"Ability14"						""
+		"Ability15"						""
+		"Ability16"						""
+		"Ability17"						""
 
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"30"		// Damage range min.
-		"AttackDamageMax"			"36"		// Damage range max.
-		"AttackRate"				"1.6"		// Speed of attack.
-		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"120"		// Range within a target can be acquired.
-		"AttackRange"				"120"		// Range within a target can be attacked.   
+		// 护甲和魔抗设置
+        //----------------------------------------------------------------
+        "ArmorPhysical"             "0"         // 基础护甲
+        "MagicalResistance"         "0"         // 基础魔抗
 
+
+        // 攻击设置
+        //----------------------------------------------------------------
+        "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"   // 攻击类型：DOTA_UNIT_CAP_NO_ATTACK         不能攻击
+                                                                //           DOTA_UNIT_CAP_MELEE_ATTACK      近战
+                                                                //           DOTA_UNIT_CAP_RANGED_ATTACK     远程                                                      
+        "AttackDamageMin"           "10"                       // 最小伤害
+        "AttackDamageMax"           "12"                       // 最大伤害
+        "AttackRate"                "1.7"                       // 攻击间隔
+        "AttackAnimationPoint"      "0.75"                      // 攻击前摇
+        "AttackAcquisitionRange"    "120"                       // 警戒范围
+        "AttackRange"               "120"                       // 攻击范围
+        "AttackRangeBuffer"         "20"                       // 攻击缓冲范围（不会取消攻击的额外射程范围）
+        "ProjectileModel"           ""                          // 投射物，填写特效路径，只有投射物特效才行
+        "ProjectileSpeed"           "900"                       // 投射速率
+        "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical" //
+
+
+        // 属性设置
+        //----------------------------------------------------------------
+        "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"   //主属性类型
+        "AttributeBaseStrength"     "0"                         // 基础力量
+        "AttributeStrengthGain"     "1"                         // 力量成长
+        "AttributeBaseIntelligence" "0"                         // 基础智力
+        "AttributeIntelligenceGain" "1"                         // 智力成长
+        "AttributeBaseAgility"      "0"                         // 基础敏捷
+        "AttributeAgilityGain"      "1"                         // 敏捷成长
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"350"		// Speed.	
 
 		"StatusHealth"				"120"		// Base health.
-		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"50"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		"StatusMana"				"100"			// Base mana.
+		"StatusManaRegen"			"0.0"		// Mana regeneration rate.
+
+		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"	
+
+		"Creature"                                              // 这段KV针对基础类npc_dota_creature
+        {
+            // 单位使用饰品
+            "AttachWearables"                                   
+            {
+                "Wearable1" { "ItemDef" "0" }                  // 每个"IdemDef" 的整数值可以在items_game.txt中找到
+                "Wearable2" { "ItemDef" "0" }                  // 注意:最近的饰品模型在Source 2中尚不可用，试图使用这些代码会失败
+                "Wearable3" { "ItemDef" "0" }                  // 如果你想确保模型存在，可以使用模型浏览器（model browser）查找其英雄名称
+                "Wearable4" { "ItemDef" "0" }
+                "Wearable5" { "ItemDef" "0" }
+            }
+		}
 	}
 }

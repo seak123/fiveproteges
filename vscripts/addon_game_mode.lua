@@ -14,6 +14,8 @@ function Precache( context )
 	]]
 end
 
+require("game_setup")
+
 -- Create the game mode when we activate
 function Activate()
 	GameRules.AddonTemplate = MGame()
@@ -22,6 +24,8 @@ end
 
 function MGame:InitGameMode()
 	print( "Template addon is loaded." )
+	GameSetup:init()
+
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 end
 
